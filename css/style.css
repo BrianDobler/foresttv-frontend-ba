@@ -10,7 +10,7 @@
 	--blanco-0: #ffffff;
 	--color-principal: #02f86e;
 	--color-secundario: #0d0d09;
-	--color-secundario-negro: #151f12;
+	--color-secundario-negro: #304729b5;
 	--color-secundario-verde: #9eed8d;
 	--font-size-1: 1.5rem;
 	--font-size-2: 1.25rem;
@@ -23,7 +23,10 @@
 	--spacer-3: 1rem;
 	--spacer-4: 1.5rem;
 	--spacer-5: 2rem;
-	--shadows: 0px 0px 50px rgba(109, 255, 87, 0.594);
+	--shadows: 0px 0px 50px rgba(46, 248, 103, 0.609);
+}
+main {
+	padding-top: 30px;
 }
 
 .menu-headear {
@@ -32,23 +35,47 @@
 	text-align: center;
 	list-style: none;
 	margin-right: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+	transition: background-color 0.3s ease;
 }
 
+.logo-container {
+	max-width: 30px;
+	margin-right: 20px;
+	max-height: 30px;
+}
 .menu-headear a {
 	font-weight: 500;
 	font-size: 15px;
-	color: var(--color-secundario-negro);
-
 	text-decoration: none;
 	margin-right: 30px;
+	color: var(--color-secundario-negro);
 	padding: 10px 10px;
 	transition: 0.3s;
 	background-color: transparent;
 }
 
 .menu-headear a:hover {
+	color: var(--color-secundario);
+}
+
+.menu-headear.scrolled {
+	background-color: var(--color-secundario);
+}
+.menu-headear.menu-headear.scrolled a:hover {
 	color: var(--color-principal);
 }
+.menu-headear a.active,
+.menu-headear a:active {
+	color: var(--color-principal);
+}
+
+.menu-headear.scrolled:hover {
+	color: var(--color-principal);
+}
+
 .principal-inicio {
 	max-width: 100%;
 	width: 100%;
@@ -109,9 +136,10 @@ video {
 	background-color: var(--color-secundario);
 	color: var(--color-principal);
 }
-.seccion {
+section {
 	height: 600px;
 	padding: 20px;
-	background-color: #f2f2f2;
+	background-color: var(--color-secundario);
+	color: var(--blanco-0);
 	text-align: center;
 }

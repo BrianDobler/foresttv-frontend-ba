@@ -34,7 +34,30 @@ function verificarScroll() {
 		video.pause();
 	}
 }
+// Detectar el evento de desplazamiento
+window.addEventListener('scroll', function () {
+	const navbar = document.querySelector('.menu-headear');
 
+	// Verificar la posición de desplazamiento
+	if (window.scrollY > 100) {
+		navbar.classList.add('scrolled');
+	} else {
+		navbar.classList.remove('scrolled');
+	}
+});
+// Obtiene todos los enlaces del menú
+const enlaces = document.querySelectorAll('.menu-headear a');
+
+// Escucha el clic en cada enlace
+enlaces.forEach((enlace) => {
+	enlace.addEventListener('click', (event) => {
+		// Remueve la clase "active" de todos los enlaces
+		enlaces.forEach((e) => e.classList.remove('active'));
+
+		// Agrega la clase "active" al enlace clicado
+		event.target.classList.add('active');
+	});
+});
 // Agregar un evento de desplazamiento para controlar el video
 window.addEventListener('scroll', verificarScroll);
 
