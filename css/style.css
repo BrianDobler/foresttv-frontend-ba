@@ -81,12 +81,12 @@ video {
 
 .texto-superior {
 	position: absolute;
-	top: 70px;
-	left: 50px;
+	top: 170px;
+	left: 70px;
 	color: var(--color-principal);
 	padding: 10px;
 	font-weight: bold;
-	font-size: 40px;
+	font-size: 50px;
 	line-height: 0.5;
 }
 
@@ -94,13 +94,14 @@ video {
 	background-color: var(--color-principal);
 	color: var(--color-secundario);
 	border: none;
+	font-weight: medium;
 	border-radius: 25px;
 	padding: 10px 20px;
-	font-size: 19px;
+	font-size: 25px;
 	cursor: pointer;
 	position: absolute;
-	top: 400px;
-	left: 100px;
+	top: 480px;
+	left: 70px;
 	box-shadow: var(--shadows);
 }
 
