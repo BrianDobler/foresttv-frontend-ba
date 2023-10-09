@@ -49,9 +49,9 @@ main {
 
 .menu-headear a {
 	font-weight: 400;
-	font-size: 15px;
+	font-size: 13px;
 	text-decoration: none;
-	margin-right: 10px;
+	margin-right: 1px;
 	color: var(--color-secundario-negro);
 	padding: 10px 10px;
 	background-color: transparent;
@@ -60,8 +60,7 @@ main {
 .menu-headear a:hover {
 	color: var(--color-secundario);
 	font-size: 15px;
-	font-weight: 500;
-	text-shadow: var(--shadows);
+	font-weight: 400;
 }
 
 .menu-headear.scrolled {
