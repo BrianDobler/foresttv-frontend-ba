@@ -9,6 +9,17 @@ En un principio queria hacer un clon de Netflix, y luego viendo el sitio de appl
 La aplicacion que realizare se llamara ForestTV, tendra como logo tipo un árbol, la gama de colores a usar seran 
 --color-principal: #02f86e; 
 --color-secundario: #0d0d09;
+
+* El sketch y el Wirefrane realizado fueron estos:
+
+![Sketch](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/09896b9d-ebec-4ad0-a72b-1802e9507d43)
+
+
+![Wireframe](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/86f2a1e8-4f97-4883-a7f8-5a059a743332)
+
+
+
+
 Algunas previsualizaciones de la pagina de Inicio, el cual tiene incluido un video en loop.
 
 ![1](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/fe7b73d4-f9c3-4606-98da-290ba54f92bd)
