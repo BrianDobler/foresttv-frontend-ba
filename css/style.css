@@ -10,7 +10,7 @@
 	--blanco-0: #ffffff;
 	--color-principal: #02f86e;
 	--color-secundario: #0d0d09;
-	--color-secundario-negro: #304729b5;
+	--color-secundario-negro: #3b3b3b;
 	--color-secundario-verde: #9eed8d;
 	--font-size-1: 1.5rem;
 	--font-size-2: 1.25rem;
@@ -46,8 +46,9 @@ main {
 	margin-right: 20px;
 	max-height: 30px;
 }
+
 .menu-headear a {
-	font-weight: 500;
+	font-weight: 400;
 	font-size: 15px;
 	text-decoration: none;
 	margin-right: 30px;
@@ -59,6 +60,8 @@ main {
 
 .menu-headear a:hover {
 	color: var(--color-secundario);
+	font-size: 20px;
+	font-weight: 400;
 }
 
 .menu-headear.scrolled {
@@ -89,7 +92,7 @@ main {
 	width: 100%;
 }
 
-video {
+iframe {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -130,6 +133,7 @@ video {
 	top: 480px;
 	left: 70px;
 	box-shadow: var(--shadows);
+	transition: 0.3s ease;
 }
 
 .boton-vivo:hover {
