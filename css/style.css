@@ -10,7 +10,7 @@
 	--blanco-0: #ffffff;
 	--color-principal: #02f86e;
 	--color-secundario: #0d0d09;
-	--color-secundario-negro: #3b3b3b;
+	--color-secundario-negro: #5b5b5b;
 	--color-secundario-verde: #9eed8d;
 	--font-size-1: 1.5rem;
 	--font-size-2: 1.25rem;
@@ -51,17 +51,17 @@ main {
 	font-weight: 400;
 	font-size: 15px;
 	text-decoration: none;
-	margin-right: 30px;
+	margin-right: 10px;
 	color: var(--color-secundario-negro);
 	padding: 10px 10px;
-	transition: 0.3s;
 	background-color: transparent;
 }
 
 .menu-headear a:hover {
 	color: var(--color-secundario);
-	font-size: 20px;
-	font-weight: 400;
+	font-size: 15px;
+	font-weight: 500;
+	text-shadow: var(--shadows);
 }
 
 .menu-headear.scrolled {
@@ -75,8 +75,23 @@ main {
 	color: var(--color-principal);
 }
 
-.menu-headear.scrolled:hover {
+.menu-headear.scrolled:hover a:hover {
 	color: var(--color-principal);
+}
+#txt-buscar {
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+
+#btn-buscar {
+	padding: 5px 10px;
+	background-color: var(--color-secundario);
+	color: var(--color-principal);
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
 }
 
 .principal-inicio {
@@ -92,7 +107,7 @@ main {
 	width: 100%;
 }
 
-iframe {
+video {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -140,10 +155,29 @@ iframe {
 	background-color: var(--color-secundario);
 	color: var(--color-principal);
 }
+.boton-mute {
+	background-color: var(--color-principal);
+	color: var(--color-secundario);
+	border: none;
+	font-weight: medium;
+	border-radius: 25px;
+	padding: 10px 20px;
+	font-size: 25px;
+	cursor: pointer;
+	position: absolute;
+	top: 480px;
+	right: 70px;
+	box-shadow: var(--shadows);
+	transition: 0.3s ease;
+}
+.boton-mute:hover {
+	background-color: var(--color-secundario);
+	color: var(--color-principal);
+}
 section {
 	height: 600px;
 	padding: 20px;
-	background-color: var(--color-secundario);
+	background-color: var(--color-secundario-negro);
 	color: var(--blanco-0);
 	text-align: center;
 }

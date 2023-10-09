@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="./css/style.css" />
 		<link rel="preconnect" href="https://www.cdnfonts.com" />
 		<link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 		<script src="sitio.js"></script>
 	</head>
 	<body>
@@ -19,14 +20,14 @@
 				<a href="#favoritos"><span>Favoritos</span></a>
 				<a href="#ligas"><span>Ligas Principales</span></a>
 				<a href="#suscripcion"><span>Suscripción</span></a>
+				<input type="text" id="txt-buscar" placeholder="Buscar...">
+				<button id="btn-buscar"><i class="fas fa-search"></i></button>
 			</nav>
 		</header>
 		<main class="inicio">
 			<div class="video-container">
-					<iframe  id="video-intro" src="https://www.youtube.com/embed/El19ZoInWP0?rel=0&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen>
-					</iframe>
-					<!--	<video id="video-intro" controls autoplay loop><source src="media/Video/premier23final.mp4" type="video/mp4" />
-					<source src="video.webm" type="video/webm" /></video>-->
+					<video id="video-intro" controls autoplay loop><source src="media/Video/premier23final.mp4" type="video/mp4" />
+					<source src="video.webm" type="video/webm" /></video>
 				
 				<div class="degrade-video"></div>
 				<div class="texto-superior">
@@ -36,7 +37,9 @@
                         <br>por ForestTV.<br />
 					</h2>
 				</div>
+				<button class="boton-mute"><i class="fas fa-volume-mute"></i></button>
                 <button class="boton-vivo">Ver Ahora</button>
+			
 			</div>
 		</main>
 		<section id="envivo">
@@ -52,7 +55,6 @@
 			<h2>Sección Suscripción</h2>
 		</div>
 		<footer class="pie-pagina">
-
 		</footer>
 		<script src="sitio.js"></script>
 	</body>

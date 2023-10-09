@@ -58,6 +58,18 @@ enlaces.forEach((enlace) => {
 		event.target.classList.add('active');
 	});
 });
+
+var searchInput = document.getElementById('searchInput');
+var searchButton = document.getElementById('searchButton');
+
+// Agregar un evento click al botón de búsqueda
+searchButton.addEventListener('click', function () {
+	var searchTerm = searchInput.value;
+	// Realiza la acción de búsqueda aquí, por ejemplo, redirecciona a una página de resultados
+	// window.location.href = '/busqueda?query=' + searchTerm;
+	alert('Buscando: ' + searchTerm);
+});
+
 // Agregar un evento de desplazamiento para controlar el video
 window.addEventListener('scroll', verificarScroll);
 
