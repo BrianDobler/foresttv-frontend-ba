@@ -14,12 +14,10 @@ section {
 	padding: 20px;
 	width: 100%;
 	background-color: var(--color-secundario);
+	color: var(--blanco-0);
 	text-align: center;
 	color: var(--color-principal);
-	min-height: 100vh;
-	margin-top: 20px;
 }
-
 /*==================== VARIABLES CSS ====================*/
 :root {
 	--negro-0: #000000;
@@ -195,9 +193,6 @@ video {
 	top: 0;
 	left: 0;
 	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 .carousel-inner {
 	font-family: var(--fuente);
