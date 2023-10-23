@@ -69,7 +69,9 @@ searchButton.addEventListener('click', function () {
 	// window.location.href = '/busqueda?query=' + searchTerm;
 	alert('Buscando: ' + searchTerm);
 });
-
+$(document).ready(function () {
+	$('#carouselExampleIndicators').carousel();
+});
 // Agregar un evento de desplazamiento para controlar el video
 window.addEventListener('scroll', verificarScroll);
 
