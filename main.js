@@ -1,62 +1,57 @@
-// Obtener el elemento de video
-var video = document.getElementById('video-intro');
+document.addEventListener('DOMContentLoaded', function () {
+	var video = document.getElementById('video-intro');
+	var botonMute = document.querySelector('.boton-mute');
+	var botonDesmute = document.querySelector('.boton-desmute');
 
-// Obtener todas las secciones
-var secciones = document.querySelectorAll('.seccion');
+	// Agrega un evento click al botón de mute
+	botonMute.addEventListener('click', function () {
+		video.muted = !video.muted; // Cambia el estado de mute
+		actualizarBotones();
+	});
 
-// Inicializar la variable para rastrear la última sección visible
-var seccionVisible = 0;
+	// Agrega un evento click al botón de desmute
+	botonDesmute.addEventListener('click', function () {
+		video.muted = !video.muted; // Cambia el estado de mute
+		actualizarBotones();
+	});
 
-// Función para verificar la posición de desplazamiento y controlar el video
-function verificarScroll() {
-	// Obtener la posición vertical actual del scroll
-	var scrollY = window.scrollY || window.pageYOffset;
-
-	// Comprobar si el usuario ha cambiado de sección
-	for (var i = 0; i < secciones.length; i++) {
-		var seccion = secciones[i];
-		var seccionTop = seccion.offsetTop;
-		var seccionBottom = seccionTop + seccion.clientHeight;
-
-		if (scrollY >= seccionTop && scrollY < seccionBottom) {
-			// El usuario está en esta sección
-			seccionVisible = i;
-			break;
+	// Función para actualizar los botones y los íconos
+	function actualizarBotones() {
+		if (video.muted) {
+			botonMute.style.display = 'block';
+			botonDesmute.style.display = 'none';
+		} else {
+			botonMute.style.display = 'none';
+			botonDesmute.style.display = 'block';
 		}
 	}
 
-	// Controlar la reproducción del video
-	if (seccionVisible === 0) {
-		// El usuario está en la primera sección, reproducir el video
-		video.play();
-	} else {
-		// El usuario está en una sección diferente, pausar el video
-		video.pause();
-	}
-}
-// Detectar el evento de desplazamiento
-window.addEventListener('scroll', function () {
-	const navbar = document.querySelector('.menu-headear');
+	// Detectar el evento de desplazamiento
+	window.addEventListener('scroll', function () {
+		const navbar = document.querySelector('.menu-headear');
 
-	// Verificar la posición de desplazamiento
-	if (window.scrollY > 100) {
-		navbar.classList.add('scrolled');
-	} else {
-		navbar.classList.remove('scrolled');
-	}
-});
-// Obtiene todos los enlaces del menú
-const enlaces = document.querySelectorAll('.menu-headear a');
-
-// Escucha el clic en cada enlace
-enlaces.forEach((enlace) => {
-	enlace.addEventListener('click', (event) => {
-		// Remueve la clase "active" de todos los enlaces
-		enlaces.forEach((e) => e.classList.remove('active'));
-
-		// Agrega la clase "active" al enlace clicado
-		event.target.classList.add('active');
+		// Verificar la posición de desplazamiento
+		if (window.scrollY > 100) {
+			navbar.classList.add('scrolled');
+		} else {
+			navbar.classList.remove('scrolled');
+		}
 	});
+	// Obtiene todos los enlaces del menú
+	const enlaces = document.querySelectorAll('.menu-headear a');
+
+	// Escucha el clic en cada enlace
+	enlaces.forEach((enlace) => {
+		enlace.addEventListener('click', (event) => {
+			// Remueve la clase "active" de todos los enlaces
+			enlaces.forEach((e) => e.classList.remove('active'));
+
+			// Agrega la clase "active" al enlace clicado
+			event.target.classList.add('active');
+		});
+	});
+	video.play();
+	actualizarBotones();
 });
 
 var searchInput = document.getElementById('searchInput');
@@ -79,4 +74,3 @@ window.addEventListener('scroll', verificarScroll);
 window.addEventListener('load', verificarScroll);
 
 // Reproducir el video cuando se inicie la página
-video.play();
