@@ -1,0 +1,193 @@
+//---------------------------------------------------------------------
+// Cargar en el DOM la funcion MostrarMenuMobile
+document.addEventListener('DOMContentLoaded', function mostrarMenuMobile() {
+	const navMenu = document.getElementById('navbar-menu');
+	const navOpcion = document.getElementById('navbar-opc');
+	const navSalir = document.getElementById('navbar-salir');
+	const navLogo = document.querySelector('.navbar_logo');
+
+	// Mostrar Menú
+	if (navOpcion) {
+		navOpcion.addEventListener('click', () => {
+			navMenu.classList.add('show-menu');
+			navLogo.style.display = 'block';
+			navOpcion.style.display = 'none';
+			navSalir.style.display = 'block';
+		});
+	}
+
+	// Ocultar Menú
+	if (navSalir) {
+		navSalir.addEventListener('click', () => {
+			navMenu.classList.remove('show-menu');
+			navLogo.style.display = 'block';
+			navSalir.style.display = 'none';
+			navOpcion.style.display = 'block';
+		});
+	}
+
+	//==================== Eliminar Menu Mobile ====================//
+	const navLink = document.querySelectorAll('.navbar_link');
+
+	function linkAction() {
+		const navMenu = document.getElementById('navbar-menu');
+		navMenu.classList.remove('show-menu');
+	}
+	navLink.forEach((n) => n.addEventListener('click', linkAction));
+});
+
+//=====Variables que se utilizan en las dos funciones siguientes=====//
+
+var video = document.getElementById('video-intro');
+var botonMute = document.querySelector('.boton-mute');
+var botonDesmute = document.querySelector('.boton-desmute');
+
+//---------------------------------------------------------------------
+// Función para escuchar los eventos de mute y desmute e iniciar
+function escucharBotonesMute() {
+	// Agrega un evento click al botón de mute
+	botonMute.addEventListener('click', function () {
+		video.muted = !video.muted;
+		actualizarBotones();
+	});
+
+	botonDesmute.addEventListener('click', function () {
+		video.muted = !video.muted;
+		actualizarBotones();
+	});
+}
+
+//--------------------------------------------------------------------
+// Función para actualizar los botones de mute y desmute
+function actualizarBotones() {
+	if (video.muted) {
+		botonMute.style.display = 'block';
+		botonDesmute.style.display = 'none';
+	} else {
+		botonMute.style.display = 'none';
+		botonDesmute.style.display = 'block';
+	}
+}
+
+//---------------------------------------------------------------------
+// Función para conocer la posición del Navbar para luego cambierle el
+// color al scrollear.
+function posicionNavbar() {
+	const navbar = document.getElementById('header');
+
+	window.addEventListener('scroll', function () {
+		// Verifica la posición del scroll
+		if (window.scrollY > 0) {
+			navbar.classList.add('scroll-header');
+		} else {
+			navbar.classList.remove('scroll-header');
+		}
+	});
+}
+
+//---------------------------------------------------------------------
+// Función para simular logueo y luego actualizar navbar con mi nombre
+function actualizarNavbar() {
+	const urlParams = new URLSearchParams(window.location.search);
+	const registroParam = urlParams.get('registro');
+	const autenticadoParam = urlParams.get('autenticado');
+
+	// Actualizar el título del navbar si el parámetro está presente
+	if (registroParam === 'true' && autenticadoParam === 'true') {
+		document.getElementById('user-navbar').innerText = 'Brian Dobler';
+		document.getElementById('user-navbar').style.display = 'block';
+	}
+}
+
+//---------------------------------------------------------------------
+// Funcion para moverme a la seccion En Vivo desde el boton 'Ver Ahora'
+function irASeccionEnVivo() {
+	const seccionEnVivo = document.getElementById('envivo');
+	const posicionSeccion = seccionEnVivo.offsetTop;
+
+	window.scrollTo({
+		top: posicionSeccion,
+		behavior: 'smooth',
+	});
+}
+
+//---------------------------------------------------------------------
+// Función para agrupar todas las llamadas a funciones.
+function agruparLlamadasFunciones() {
+	escucharBotonesMute();
+	video.play();
+	actualizarBotones();
+	posicionNavbar();
+}
+
+actualizarNavbar();
+agruparLlamadasFunciones();
+
+const fila = document.querySelector('.container_carousel');
+const peliculas = document.querySelectorAll('.card_partido');
+
+const flechaIzquierda = document.getElementById('flecha-izq');
+const flechaDerecha = document.getElementById('flecha-der');
+
+// ? ----- ----- Event Listener para la flecha derecha. ----- -----
+flechaDerecha.addEventListener('click', () => {
+	fila.scrollLeft += fila.offsetWidth;
+
+	const indicadorActivo = document.querySelector('.indicadores .activo');
+	if (indicadorActivo.nextSibling) {
+		indicadorActivo.nextSibling.classList.add('activo');
+		indicadorActivo.classList.remove('activo');
+	}
+});
+
+// ? ----- ----- Event Listener para la flecha izquierda. ----- -----
+flechaIzquierda.addEventListener('click', () => {
+	fila.scrollLeft -= fila.offsetWidth;
+
+	const indicadorActivo = document.querySelector('.indicadores .activo');
+	if (indicadorActivo.previousSibling) {
+		indicadorActivo.previousSibling.classList.add('activo');
+		indicadorActivo.classList.remove('activo');
+	}
+});
+
+// ? ----- ----- Paginacion ----- -----
+const numeroPaginas = Math.ceil(peliculas.length / 5);
+for (let i = 0; i < numeroPaginas; i++) {
+	const indicador = document.createElement('button');
+
+	if (i === 0) {
+		indicador.classList.add('activo');
+	}
+
+	document.querySelector('.indicadores').appendChild(indicador);
+	indicador.addEventListener('click', (e) => {
+		fila.scrollLeft = i * fila.offsetWidth;
+
+		document.querySelector('.indicadores .activo').classList.remove('activo');
+		e.target.classList.add('activo');
+	});
+}
+
+// ? ----- ----- Hover ----- -----
+peliculas.forEach((pelicula) => {
+	pelicula.addEventListener('mouseenter', (e) => {
+		const elemento = e.currentTarget;
+		setTimeout(() => {
+			peliculas.forEach((pelicula) => pelicula.classList.remove('hover'));
+			elemento.classList.add('hover');
+		}, 300);
+	});
+});
+
+fila.addEventListener('mouseleave', () => {
+	peliculas.forEach((pelicula) => pelicula.classList.remove('hover'));
+});
+$(document).ready(function () {
+	$('#carouselExampleIndicators').carousel();
+});
+// Agregar un evento de desplazamiento para controlar el video
+window.addEventListener('scroll', verificarScroll);
+
+// Llamar a verificarScroll al cargar la página
+window.addEventListener('load', verificarScroll);
