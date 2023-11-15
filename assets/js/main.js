@@ -165,37 +165,28 @@ partidos.forEach((card_partido_liga) => {
 fila.addEventListener('mouseleave', () => {
 	partidos.forEach((card_partido_liga) => card_partido_liga.classList.remove('hover'));
 });
-
 const filas = document.querySelector('.container_carousel');
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+let isDragging = false;
+let startX;
 
-if (isMobile) {
-	enableTouchScroll();
-}
+filas.addEventListener('touchstart', (e) => {
+	isDragging = true;
+	startX = e.touches[0].clientX;
+});
 
-function enableTouchScroll() {
-	let isDragging = false;
-	let startX;
+filas.addEventListener('touchmove', (e) => {
+	if (!isDragging) return;
 
-	filas.addEventListener('touchstart', (e) => {
-		isDragging = true;
-		startX = e.touches[0].clientX;
-	});
+	const currentX = e.touches[0].clientX;
+	const diffX = startX - currentX;
 
-	filas.addEventListener('touchmove', (e) => {
-		if (!isDragging) return;
+	filas.scrollLeft += diffX;
+	startX = currentX;
+});
 
-		const currentX = e.touches[0].clientX;
-		const diffX = startX - currentX;
-
-		filas.scrollLeft += diffX;
-		startX = currentX;
-	});
-
-	filas.addEventListener('touchend', () => {
-		isDragging = false;
-	});
-}
+filas.addEventListener('touchend', () => {
+	isDragging = false;
+});
 
 // Agregar un evento de desplazamiento para controlar el video
 window.addEventListener('scroll', verificarScroll);
