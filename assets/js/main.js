@@ -124,7 +124,7 @@ actualizarNavbar();
 agruparLlamadasFunciones();
 
 const fila = document.querySelector('.container_carousel');
-const peliculas = document.querySelectorAll('.card_partido');
+const partidos = document.querySelectorAll('.card_partido_liga');
 
 const flechaIzquierda = document.getElementById('flecha-izq');
 const flechaDerecha = document.getElementById('flecha-der');
@@ -133,7 +133,7 @@ const flechaDerecha = document.getElementById('flecha-der');
 flechaDerecha.addEventListener('click', () => {
 	fila.scrollLeft += fila.offsetWidth;
 
-	const indicadorActivo = document.querySelector('.indicadores .activo');
+	const indicadorActivo = document.querySelector('.activo');
 	if (indicadorActivo.nextSibling) {
 		indicadorActivo.nextSibling.classList.add('activo');
 		indicadorActivo.classList.remove('activo');
@@ -144,48 +144,59 @@ flechaDerecha.addEventListener('click', () => {
 flechaIzquierda.addEventListener('click', () => {
 	fila.scrollLeft -= fila.offsetWidth;
 
-	const indicadorActivo = document.querySelector('.indicadores .activo');
+	const indicadorActivo = document.querySelector('.activo');
 	if (indicadorActivo.previousSibling) {
 		indicadorActivo.previousSibling.classList.add('activo');
 		indicadorActivo.classList.remove('activo');
 	}
 });
 
-// ? ----- ----- Paginacion ----- -----
-const numeroPaginas = Math.ceil(peliculas.length / 5);
-for (let i = 0; i < numeroPaginas; i++) {
-	const indicador = document.createElement('button');
-
-	if (i === 0) {
-		indicador.classList.add('activo');
-	}
-
-	document.querySelector('.indicadores').appendChild(indicador);
-	indicador.addEventListener('click', (e) => {
-		fila.scrollLeft = i * fila.offsetWidth;
-
-		document.querySelector('.indicadores .activo').classList.remove('activo');
-		e.target.classList.add('activo');
-	});
-}
-
 // ? ----- ----- Hover ----- -----
-peliculas.forEach((pelicula) => {
-	pelicula.addEventListener('mouseenter', (e) => {
+partidos.forEach((card_partido_liga) => {
+	card_partido_liga.addEventListener('mouseenter', (e) => {
 		const elemento = e.currentTarget;
 		setTimeout(() => {
-			peliculas.forEach((pelicula) => pelicula.classList.remove('hover'));
+			partidos.forEach((card_partido_liga) => card_partido_liga.classList.remove('hover'));
 			elemento.classList.add('hover');
-		}, 300);
+		}, 10);
 	});
 });
 
 fila.addEventListener('mouseleave', () => {
-	peliculas.forEach((pelicula) => pelicula.classList.remove('hover'));
+	partidos.forEach((card_partido_liga) => card_partido_liga.classList.remove('hover'));
 });
-$(document).ready(function () {
-	$('#carouselExampleIndicators').carousel();
-});
+
+const filas = document.querySelector('.container_carousel');
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+if (isMobile) {
+	enableTouchScroll();
+}
+
+function enableTouchScroll() {
+	let isDragging = false;
+	let startX;
+
+	filas.addEventListener('touchstart', (e) => {
+		isDragging = true;
+		startX = e.touches[0].clientX;
+	});
+
+	filas.addEventListener('touchmove', (e) => {
+		if (!isDragging) return;
+
+		const currentX = e.touches[0].clientX;
+		const diffX = startX - currentX;
+
+		filas.scrollLeft += diffX;
+		startX = currentX;
+	});
+
+	filas.addEventListener('touchend', () => {
+		isDragging = false;
+	});
+}
+
 // Agregar un evento de desplazamiento para controlar el video
 window.addEventListener('scroll', verificarScroll);
 
