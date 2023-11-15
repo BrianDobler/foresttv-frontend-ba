@@ -393,11 +393,9 @@ img.navbar_logo {
 .secciones_container .container_carousel {
 	width: 100%;
 	padding: 50px 0;
-	overflow: hidden;
 	scroll-behavior: smooth;
 	overflow-x: scroll;
 	overflow-y: hidden;
-	-webkit-overflow-scrolling: touch;
 }
 
 .secciones_container .container_carousel .carousel {
