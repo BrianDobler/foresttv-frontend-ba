@@ -165,6 +165,7 @@ partidos.forEach((card_partido_liga) => {
 fila.addEventListener('mouseleave', () => {
 	partidos.forEach((card_partido_liga) => card_partido_liga.classList.remove('hover'));
 });
+
 const filas = document.querySelector('.container_carousel');
 let isDragging = false;
 let startX;
