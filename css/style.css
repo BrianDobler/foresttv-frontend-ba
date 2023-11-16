@@ -4,7 +4,7 @@
 	--blanco-0: #ffffff;
 	--color-principal: #02f86e;
 	--color-secundario: #0d0d09;
-	--color-secundario-negro: #2d2d2d;
+	--color-secundario-negro: #999999;
 	--color-secundario-verde: #9eed8d;
 	--font-weight-thin: 300;
 	--font-weight-bold: 600;
@@ -89,6 +89,7 @@ h1 {
 ul {
 	list-style: none;
 }
+
 a {
 	text-decoration: none;
 }
@@ -96,10 +97,7 @@ h5 {
 	font-weight: var(--fuente-semi-bold);
 	color: var(--color-secundario);
 }
-p {
-	font-weight: var(--fuente-light);
-	color: var(--color-secundario);
-}
+
 img.navbar_logo {
 	max-width: 40%;
 	max-height: 40%;
@@ -127,7 +125,7 @@ img.navbar_logo {
 .linea-divisora {
 	border-top: 2px solid #333;
 	max-width: 1280px;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 
 .container {
@@ -154,6 +152,7 @@ img.navbar_logo {
 	background-color: #000;
 	transition: background-color 0.3s ease;
 }
+
 /*==================== BARRA DE NAVEGACIÓN ====================*/
 .navbar {
 	max-width: 968px;
@@ -164,7 +163,7 @@ img.navbar_logo {
 }
 .navbar_logo {
 	font-weight: var(--font-medium);
-	color: #5b5b5b;
+	color: var(--color-principal);
 }
 
 .navbar_opc {
@@ -185,7 +184,7 @@ img.navbar_logo {
 	flex-direction: column;
 	align-items: center;
 	font-size: var(--small-font-size);
-	color: #5b5b5b;
+	color: var(--color-secundario-negro);
 	font-weight: var(--font-medium);
 }
 .navbar_link:hover,
@@ -223,7 +222,15 @@ img.navbar_logo {
 .scroll-header:hover {
 	color: var(--color-secundario);
 }
-
+.scroll-header .navbar_link {
+	color: #333;
+}
+.scroll-header .navbar_link:hover {
+	color: #000;
+}
+.scroll-header .navbar_logo {
+	color: #000;
+}
 /*============= Media query para la barra de Navegacion ==============*/
 
 @media screen and (max-width: 767px) {
@@ -258,7 +265,7 @@ img.navbar_logo {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
 	padding: 20px;
 	text-align: center;
 	z-index: 1;
@@ -336,6 +343,7 @@ img.navbar_logo {
 	background-color: var(--color-secundario);
 	color: var(--color-principal);
 }
+
 /*==================== EN VIVO ====================*/
 
 /*_________ Contenedor Titulo y Controles ________*/
@@ -355,7 +363,7 @@ img.navbar_logo {
 /*_________ Contenedor Principal y Flechas _________*/
 
 .secciones_container {
-	margin-bottom: 70px;
+	margin-bottom: 10px;
 }
 
 .secciones_container .container_principal {
@@ -669,6 +677,7 @@ img.navbar_logo {
 	font-weight: 300;
 	text-align: center;
 	margin-top: 3rem;
+	color: var(--color-principal);
 }
 
 .footer__titulo,
@@ -677,7 +686,7 @@ img.navbar_logo {
 	text-decoration: none;
 }
 
-/* Dispositivos Pequeños */
+/*=============== Media Query dispositivos pequeños ===============*/
 @media screen and (max-width: 350px) {
 	.container {
 		margin-left: var(--mb-1);
@@ -697,7 +706,7 @@ img.navbar_logo {
 	}
 }
 
-/* Dispositivos Medianos */
+/*=============== Media Query dispositivos medianos y grandes ===============*/
 @media screen and (min-width: 568px) {
 	.secciones_container {
 		max-width: 760px;
@@ -754,6 +763,7 @@ img.navbar_logo {
 		.secciones_container {
 			max-width: 1080px;
 		}
+
 		.secciones_container .container_carousel .card_partido_liga {
 			flex: 0 0 20%;
 		}
@@ -780,18 +790,6 @@ img.navbar_logo {
 		.inicio_scroll-button {
 			margin-left: 3rem;
 		}
-		.sobreMi__container {
-			column-gap: 5rem;
-		}
-		.sobreMi__img {
-			width: 350px;
-		}
-		.sobreMi__descripcion {
-			text-align: initial;
-		}
-		.sobreMi__buttons {
-			justify-content: initial;
-		}
 		.container_card {
 			max-width: 100%;
 			grid-template-columns: repeat(2, 1fr);
@@ -811,19 +809,44 @@ img.navbar_logo {
 		}
 	}
 
-	/* Dispositivos grandes */
+	/*======== Dispositivos grandes =========*/
 	@media screen and (min-width: 1024px) {
 		.header,
 		.main,
 		.footer__container {
 			padding: 0;
 		}
+
 		.container_card {
 			grid-template-columns: repeat(3, 1fr);
 			max-width: 100%;
 		}
 		.secciones_container .container_carousel {
 			overflow: hidden;
+		}
+
+		@media screen and (min-width: 1920px) {
+			.header,
+			.main,
+			.footer__container {
+				padding: 0;
+			}
+
+			.container_card {
+				grid-template-columns: repeat(3, 1fr);
+				max-width: 100%;
+				gap: 100px;
+			}
+			.secciones_container .container_carousel {
+				overflow: hidden;
+			}
+			.video-container,
+			.linea-divisora {
+				min-width: 1920px;
+			}
+			.secciones_container {
+				min-width: 1800px;
+			}
 		}
 	}
 }

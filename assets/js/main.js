@@ -129,7 +129,7 @@ const partidos = document.querySelectorAll('.card_partido_liga');
 const flechaIzquierda = document.getElementById('flecha-izq');
 const flechaDerecha = document.getElementById('flecha-der');
 
-// ? ----- ----- Event Listener para la flecha derecha. ----- -----
+//  Evento Listener para la flecha derecha. ----- -----
 flechaDerecha.addEventListener('click', () => {
 	fila.scrollLeft += fila.offsetWidth;
 
@@ -140,7 +140,7 @@ flechaDerecha.addEventListener('click', () => {
 	}
 });
 
-// ? ----- ----- Event Listener para la flecha izquierda. ----- -----
+// Evento Listener para la flecha izquierda. ----- -----
 flechaIzquierda.addEventListener('click', () => {
 	fila.scrollLeft -= fila.offsetWidth;
 
@@ -151,7 +151,7 @@ flechaIzquierda.addEventListener('click', () => {
 	}
 });
 
-// ? ----- ----- Hover ----- -----
+// Hover ----- -----
 partidos.forEach((card_partido_liga) => {
 	card_partido_liga.addEventListener('mouseenter', (e) => {
 		const elemento = e.currentTarget;
@@ -166,6 +166,7 @@ fila.addEventListener('mouseleave', () => {
 	partidos.forEach((card_partido_liga) => card_partido_liga.classList.remove('hover'));
 });
 
+// =========== Deslizar carousel con el dedo en dispositivos mobile
 const filas = document.querySelector('.container_carousel');
 let isDragging = false;
 let startX;
@@ -188,7 +189,7 @@ filas.addEventListener('touchmove', (e) => {
 filas.addEventListener('touchend', () => {
 	isDragging = false;
 });
-
+//=======================================================
 // Agregar un evento de desplazamiento para controlar el video
 window.addEventListener('scroll', verificarScroll);
 
