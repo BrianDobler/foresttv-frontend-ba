@@ -42,7 +42,7 @@
 				<div class="navbar_menu" id="navbar-menu">
 					<ul class="navbar_lista grid">
 						<li class="navbar_item">
-							<a href="#inicio" class="navbar_link">
+							<a href="#inicio" class="navbar_link" >
 								<i class="fas fa-home navbar_icono"></i> Inicio
 							</a>
 						</li>
@@ -88,14 +88,13 @@
 		<main id="main">
 			<div class="seccion inicio" id="inicio">
 				<div class="inicio_container container grid">
-					<div class="contenido_inicio">
 					<div class="video-container">
 						<video id="video-intro" autoplay loop muted>
-							<source src="./assets/media/video/LPF.mp4" type="video/mp4" />
+							<source src="./assets/media/video/premier23final.mp4" type="video/mp4" />
 							<source src="video.webm" type="video/webm" />
 						</video>
 					</div>
-					<div class="texto-botones">
+					<div class="contenedor-texto">
 					<div class="texto-superior">
 						
 						<h1>
@@ -104,12 +103,14 @@
 							por ForestTV.<br />
 						</h1>
 					</div>
+					<div class="btns-mute">
 						<button class="boton-desmute"><i class="fas fa-volume-high"></i></button>
 						<button class="boton-mute"><i class="fas fa-volume-mute"></i></button>
-						<button class="boton-vivo" id=#envivo onclick="irASeccionEnVivo()">
+					</div>
+					<button class="boton-vivo" id=#envivo onclick="irASeccionEnVivo()">
 							Ver Ahora</button>
 					</div>
-				</div>
+				
 			</div>
 			</div>
 			<div class="linea-divisora"></div>

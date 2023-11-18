@@ -152,7 +152,7 @@ img.navbar_logo {
 	background-color: #000;
 	transition: background-color 0.3s ease;
 }
-
+/* =============================================================*/
 /*==================== BARRA DE NAVEGACIÓN ====================*/
 .navbar {
 	max-width: 968px;
@@ -256,24 +256,33 @@ img.navbar_logo {
 }
 
 .seccion.inicio {
+	display: flex;
+}
+.seccion.inicio .inicio_container {
+	margin: 0 auto;
+	margin-bottom: 6.25em;
+}
+.inicio_container {
 	position: relative;
 }
-
-.seccion.inicio .texto-botones {
+.seccion.inicio .texto-superior {
+	font-weight: 600;
+	font-size: 3.12em;
+	margin-bottom: 0.4em;
+}
+.seccion.inicio .contenedor-texto {
 	position: absolute;
-	top: 0;
+	z-index: 2;
+	text-align: left;
+	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
-	background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
 	padding: 20px;
-	text-align: center;
-	z-index: 1;
+	box-sizing: border-box;
 }
+
 .contenido_inicio .texto-superior h1 {
-	margin: 10px;
-	margin-left: auto;
-	margin-right: auto;
+	font-size: 100px;
 }
 
 .seccion.inicio .boton-vivo {
@@ -298,7 +307,6 @@ img.navbar_logo {
 	padding: 10px 20px;
 	font-size: 25px;
 	cursor: pointer;
-	position: absolute;
 	top: 480px;
 	left: 70px;
 	box-shadow: var(--shadows);
@@ -344,6 +352,7 @@ img.navbar_logo {
 	color: var(--color-principal);
 }
 
+/* =================================================*/
 /*==================== EN VIVO ====================*/
 
 /*_________ Contenedor Titulo y Controles ________*/
@@ -430,7 +439,7 @@ img.navbar_logo {
 	vertical-align: top;
 	border-radius: 17px;
 }
-
+/* ==========================================================*/
 /*==================== CARDS SUSCRIPCION ====================*/
 
 .suscripcion_container h4 {
@@ -638,6 +647,7 @@ img.navbar_logo {
 	box-shadow: var(--shadows);
 	color: var(--color-principal);
 }
+/* =======================================================*/
 /*==================== PIE DE PAGINA ====================*/
 
 .footer {
@@ -685,7 +695,7 @@ img.navbar_logo {
 	color: var(--color-principal);
 	text-decoration: none;
 }
-
+/* =================================================================*/
 /*=============== Media Query dispositivos pequeños ===============*/
 @media screen and (max-width: 350px) {
 	.container {
@@ -821,8 +831,8 @@ img.navbar_logo {
 			grid-template-columns: repeat(3, 1fr);
 			max-width: 100%;
 		}
-		.secciones_container .container_carousel {
-			overflow: hidden;
+		.video-container {
+			min-width: 1300px;
 		}
 
 		@media screen and (min-width: 1920px) {
@@ -844,8 +854,12 @@ img.navbar_logo {
 			.linea-divisora {
 				min-width: 1920px;
 			}
+
 			.secciones_container {
 				min-width: 1800px;
+			}
+			.seccion.inicio #video-intro {
+				width: 100%;
 			}
 		}
 	}
