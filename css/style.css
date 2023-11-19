@@ -265,6 +265,7 @@ img.navbar_logo {
 	background-size: cover;
 	margin-bottom: 3.12em;
 	overflow: hidden;
+	transition: 3s ease all;
 }
 
 #video-intro {
@@ -331,18 +332,17 @@ img.navbar_logo {
 
 .boton-desmute,
 .boton-mute {
-	background-color: var(--color-principal);
-	color: var(--color-secundario);
+	background-color: rgba(0, 0, 0, 0.1);
+	color: var(--color-secundario-negro);
 	border: none;
 	font-weight: medium;
-	border-radius: 25px;
-	padding: 10px 20px;
-	font-size: 25px;
+	border-radius: 50%;
+	padding: 10px 10px;
+	font-size: 15px;
 	cursor: pointer;
-	box-shadow: var(--shadows);
-	transition: 0.3s ease;
+
 	position: absolute;
-	bottom: 100px;
+	bottom: 105px;
 	right: 20px;
 	z-index: 2;
 }
@@ -771,6 +771,7 @@ img.navbar_logo {
 
 		.inicio_container {
 			max-width: 1920px;
+			transition: 3s ease all;
 		}
 		.secciones_container {
 			max-width: 1080px;
@@ -855,6 +856,7 @@ img.navbar_logo {
 			margin-top: 17rem;
 			margin-bottom: 0.5em;
 			margin-left: 100px;
+			transition: 2s ease all;
 		}
 		.inicio_container .descripcion {
 			margin-bottom: 1.25em;
