@@ -6,8 +6,8 @@ Cada alumno debia decidir que sitio web implementaria, ya sea un ecommerce, tien
 En un principio queria hacer un clon de Netflix, y luego viendo el sitio de apple, era muy similar con cards, recomendando partidos y demas.
 
 La aplicacion que realizare se llamara ForestTV, tendra como logo tipo un árbol, la gama de colores a usar son: 
---color-principal: `#02f86e`; 
---color-secundario: `#0d0d09`;
+--color-principal: `#02F86E`; 
+--color-secundario: `#0D0D09`;
 
 # * El sketch y el Wirefrane realizado fueron estos:
 
