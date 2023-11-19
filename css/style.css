@@ -340,13 +340,39 @@ img.navbar_logo {
 	padding: 10px 10px;
 	font-size: 15px;
 	cursor: pointer;
-
 	position: absolute;
 	bottom: 105px;
 	right: 20px;
 	z-index: 2;
 }
-
+@keyframes aparecerTextoIncio {
+	from {
+		opacity: 0;
+		transform: translateY(-200px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+		transform: translateX(0);
+	}
+}
+@keyframes aparecerBotonesInicio {
+	from {
+		opacity: 0;
+		transform: translateX(-200px);
+	}
+	to {
+		opacity: 1;
+		transform: translateZ(0);
+		transform: translateX(0);
+	}
+}
+.boton-vivo {
+	animation: aparecerBotonesInicio 1s ease-in;
+}
+.texto-superior {
+	animation: aparecerTextoIncio 1s ease-out;
+}
 .boton-vivo:hover,
 .boton-mute:hover,
 .boton-desmute:hover {
