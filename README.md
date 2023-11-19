@@ -9,7 +9,7 @@ La aplicacion que realizare se llamara ForestTV, tendra como logo tipo un árbol
 --color-principal: #02f86e; 
 --color-secundario: #0d0d09;
 
-* El sketch y el Wirefrane realizado fueron estos:
+# * El sketch y el Wirefrane realizado fueron estos:
 
 ![Sketch](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/09896b9d-ebec-4ad0-a72b-1802e9507d43)
 
@@ -31,7 +31,7 @@ Algunas previsualizaciones de la pagina de Inicio, el cual tiene incluido un vid
 
 
 
- *--------------------------------------------------- VERSION MOBILE -------------------------------------------------------------*
+ # Versión Mobile
 
 
  
@@ -39,7 +39,7 @@ Algunas previsualizaciones de la pagina de Inicio, el cual tiene incluido un vid
 
 
 
- *---------------------------------------------------- VERSION DESKTOP -------------------------------------------------------------*
+ # Versión Desktop
 
 
  
