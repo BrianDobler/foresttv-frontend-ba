@@ -227,6 +227,7 @@ img.navbar_logo {
 }
 .scroll-header .navbar_link:hover {
 	color: #000;
+	text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.7);
 }
 .scroll-header .navbar_logo {
 	color: #000;
@@ -254,23 +255,48 @@ img.navbar_logo {
 		max-width: 300px;
 	}
 }
-
-.seccion.inicio {
-	display: flex;
+.inicio_container {
+	position: relative;
+	font-size: 16px;
+	min-height: 40.62em;
+	color: #fff;
+	background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+	background-position: center center;
+	background-size: cover;
+	margin-bottom: 3.12em;
+	overflow: hidden;
 }
-.seccion.inicio .inicio_container {
+
+#video-intro {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.inicio_container .container {
 	margin: 0 auto;
 	margin-bottom: 6.25em;
 }
-.inicio_container {
-	position: relative;
-}
-.seccion.inicio .texto-superior {
+
+.inicio_container .titulo {
 	font-weight: 600;
 	font-size: 3.12em;
-	margin-bottom: 0.4em;
+	margin-top: 2rem;
+	margin-bottom: 0.5em;
 }
-.seccion.inicio .contenedor-texto {
+.inicio_container .descripcion {
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.75em;
+	max-width: 50%;
+	margin-bottom: 1.25em;
+}
+
+.seccion.inicio .texto-superior {
 	position: absolute;
 	z-index: 2;
 	text-align: left;
@@ -279,59 +305,31 @@ img.navbar_logo {
 	width: 100%;
 	padding: 20px;
 	box-sizing: border-box;
-}
-
-.contenido_inicio .texto-superior h1 {
-	font-size: 100px;
-}
-
-.seccion.inicio .boton-vivo {
-	text-align: left;
-	margin-left: 20px;
-}
-.seccion.inicio .video-container {
-	width: 100%;
-	max-width: 100%;
-}
-
-.seccion.inicio #video-intro {
-	width: 100%;
+	top: 0;
 }
 
 .boton-vivo {
 	background-color: var(--color-principal);
 	color: var(--color-secundario);
 	border: none;
-	font-weight: medium;
+	font-weight: var(--fuente-medium);
 	border-radius: 25px;
 	padding: 10px 20px;
 	font-size: 25px;
 	cursor: pointer;
-	top: 480px;
-	left: 70px;
+	position: absolute;
 	box-shadow: var(--shadows);
 	transition: 0.3s ease;
+	bottom: 100px;
+	left: 20px;
+	z-index: 2;
 }
-
 .boton-vivo:hover {
 	background-color: var(--color-secundario);
 	color: var(--color-principal);
 }
-.boton-desmute {
-	background-color: var(--color-principal);
-	color: var(--color-secundario);
-	border: none;
-	font-weight: medium;
-	border-radius: 25px;
-	padding: 10px 20px;
-	font-size: 25px;
-	cursor: pointer;
 
-	top: 480px;
-	right: 70px;
-	box-shadow: var(--shadows);
-	transition: 0.3s ease;
-}
+.boton-desmute,
 .boton-mute {
 	background-color: var(--color-principal);
 	color: var(--color-secundario);
@@ -341,13 +339,17 @@ img.navbar_logo {
 	padding: 10px 20px;
 	font-size: 25px;
 	cursor: pointer;
-	top: 480px;
-	right: 70px;
 	box-shadow: var(--shadows);
 	transition: 0.3s ease;
+	position: absolute;
+	bottom: 100px;
+	right: 20px;
+	z-index: 2;
 }
 
-.boton-mute:hover {
+.boton-vivo:hover,
+.boton-mute:hover,
+.boton-desmute:hover {
 	background-color: var(--color-secundario);
 	color: var(--color-principal);
 }
@@ -773,7 +775,14 @@ img.navbar_logo {
 		.secciones_container {
 			max-width: 1080px;
 		}
+		.boton-vivo {
+			bottom: 100px;
+		}
 
+		.boton-desmute,
+		.boton-mute {
+			bottom: 100px;
+		}
 		.secciones_container .container_carousel .card_partido_liga {
 			flex: 0 0 20%;
 		}
@@ -834,6 +843,23 @@ img.navbar_logo {
 		.video-container {
 			min-width: 1300px;
 		}
+		.boton-vivo {
+			left: 120px;
+		}
+
+		.boton-desmute,
+		.boton-mute {
+			right: 100px;
+		}
+		.inicio_container .titulo {
+			margin-top: 17rem;
+			margin-bottom: 0.5em;
+			margin-left: 100px;
+		}
+		.inicio_container .descripcion {
+			margin-bottom: 1.25em;
+			margin-left: 100px;
+		}
 
 		@media screen and (min-width: 1920px) {
 			.header,
@@ -841,7 +867,9 @@ img.navbar_logo {
 			.footer__container {
 				padding: 0;
 			}
-
+			.contenedor-titulo-controles h4 {
+				margin-top: 20px;
+			}
 			.container_card {
 				grid-template-columns: repeat(3, 1fr);
 				max-width: 100%;

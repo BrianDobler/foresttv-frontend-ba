@@ -166,6 +166,15 @@ fila.addEventListener('mouseleave', () => {
 	partidos.forEach((card_partido_liga) => card_partido_liga.classList.remove('hover'));
 });
 
+//Funcion para cambiar el texto de inicio cuando sea mobile
+function cambiarTextoIncio() {
+	if (window.innerWidth <= 767) {
+		document.querySelector('.inicio_container .descripcion').textContent =
+			'Toda la programación en vivo de los partidos de todo el mundo.';
+		document.querySelector('.inicio_container .descripcion').classList.add('mobile');
+	}
+}
+cambiarTextoIncio();
 // =========== Deslizar carousel con el dedo en dispositivos mobile
 const filas = document.querySelector('.container_carousel');
 let isDragging = false;

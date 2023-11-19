@@ -5,8 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="./css/reset.css" />
 
-		<!--==================== BOOTSTRAP ====================
-		<link
+		<!--==================== BOOTSTRAP ====================-->
+		<!--<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 			rel="stylesheet"
 			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
@@ -88,20 +88,12 @@
 		<main id="main">
 			<div class="seccion inicio" id="inicio">
 				<div class="inicio_container container grid">
-					<div class="video-container">
-						<video id="video-intro" autoplay loop muted>
-							<source src="./assets/media/video/premier23final.mp4" type="video/mp4" />
-							<source src="video.webm" type="video/webm" />
-						</video>
-					</div>
-					<div class="contenedor-texto">
 					<div class="texto-superior">
-						
-						<h1>
-							Todos los <br />
-							partidos En Vivo</br>
-							por ForestTV.<br />
-						</h1>
+						<h3 class="titulo">Forest TV+</h3>
+						<p class="descripcion">
+						Mira toda nuestra programación en vivo. Somos el sitio de streaming mas visto de latino américa, con mas de 500 partidos
+						diarios de cualquier parte del mundo para que puedas disfrutar desde tu casa, en tiempo real y sin pagar tarifas excesivas.
+					</p>
 					</div>
 					<div class="btns-mute">
 						<button class="boton-desmute"><i class="fas fa-volume-high"></i></button>
@@ -109,9 +101,15 @@
 					</div>
 					<button class="boton-vivo" id=#envivo onclick="irASeccionEnVivo()">
 							Ver Ahora</button>
+					
+					<div class="video-container">
+						<video id="video-intro" autoplay loop muted>
+							<source src="./assets/media/video/premier23final.mp4" type="video/mp4" />
+							<source src="video.webm" type="video/webm" />
+						</video>
 					</div>
-				
-			</div>
+				</div>
+				</div>
 			</div>
 			<div class="linea-divisora"></div>
 			<!--==================== SECCION EN VIVO ====================-->
@@ -692,5 +690,9 @@
 		<!--==================== JavaScript ====================-->
 		<script src="./assets/js/main.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 	</body>
 </html>
