@@ -1,12 +1,11 @@
 # foresttv-frontend-ba
-Este es un proyecto que se ira desarrollando para el curso de BA Frontend. 
+Este es un proyecto que fui desarrollando a en diferentes sprints para el curso de BA Multiplica 2.0 'Frontend Developer'. 
 
-Cada alumno debia decidir que sitio web implementaria, ya sea un ecommerce, tienda, etc. Particularmente, como soy amante del fútbol, y Lionel Andrés esta jugando en su nuevo equipo 
-Inter Miami, me parecio buena idea implementar un sitio similar al de AppleTV donde transmiten los partidos de la MLS(liga de Estados Unidos) en vivo.
+Cada alumno debia decidir que sitio web implementaria, ya sea un ecommerce, tienda, etc. Particularmente, como soy amante del fútbol, y Lionel Andrés esta jugando en su nuevo equipo Inter Miami, me parecio buena idea implementar un sitio similar al de AppleTV donde transmiten los partidos de la MLS(liga de Estados Unidos) en vivo.
 
 En un principio queria hacer un clon de Netflix, y luego viendo el sitio de apple, era muy similar con cards, recomendando partidos y demas.
 
-La aplicacion que realizare se llamara ForestTV, tendra como logo tipo un árbol, la gama de colores a usar seran 
+La aplicacion que realizare se llamara ForestTV, tendra como logo tipo un árbol, la gama de colores a usar son: 
 --color-principal: #02f86e; 
 --color-secundario: #0d0d09;
 
@@ -30,12 +29,9 @@ Algunas previsualizaciones de la pagina de Inicio, el cual tiene incluido un vid
 
 ![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/31710ed5-3d68-4497-808e-5161642e32d8)
 
-![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/6bf9e148-6ba8-4b58-992e-c45536fe0fab)
 
-![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/06c5e74b-0ac4-4d67-9f72-17246991f348)
-
-![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/f0d79d5e-d947-474b-8c37-e37ccd8ab966)
-
+ ---------------------------------------- VERSION MOBILE -------------------------------------------------------
+ ![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/155329d3-0269-43f5-8683-c8d72f00598e) ![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/6eb02c88-e31d-48bd-b134-35a945c5d2cb) ![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/fc29f92d-69bf-4b89-a118-ee5f2923bf5b)
 
 
 
