@@ -6,7 +6,7 @@ Cada alumno debia decidir que sitio web implementaria, ya sea un ecommerce, tien
 En un principio queria hacer un clon de Netflix, y luego viendo el sitio de apple, era muy similar con cards, recomendando partidos y demas.
 
 La aplicacion que realizare se llamara ForestTV, tendra como logo tipo un árbol, la gama de colores a usar son: 
-El color principal`#02F86E` y el color secundario: `#0D0D09`;
+El color principal `#02F86E` y el color secundario: `#0D0D09`
 
 # * El sketch y el Wirefrane realizado fueron estos:
 
@@ -30,6 +30,18 @@ El color principal`#02F86E` y el color secundario: `#0D0D09`;
 
  
 ![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/77284768-9e9c-46bb-986c-b77b874f3adf)
+
+
+![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/eb3527db-8932-4765-a5d3-d163061d59f2)
+
+
+![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/4a4d4d36-90e9-4ec6-bf80-0f5a4a3a44a9)
+
+
+![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/4e572de1-b55c-42d5-93bb-9116b7e1509c)
+
+
+
 
 
 
