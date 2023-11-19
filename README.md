@@ -30,8 +30,21 @@ Algunas previsualizaciones de la pagina de Inicio, el cual tiene incluido un vid
 ![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/31710ed5-3d68-4497-808e-5161642e32d8)
 
 
- *------------------------------------------------ VERSION MOBILE ----------------------------------------------------------*
+
+ *--------------------------------------------------- VERSION MOBILE -------------------------------------------------------------*
+
+
+ 
 ![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/cccaf1c4-dcb0-4d4c-99dc-26600348c237)    ![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/6eb02c88-e31d-48bd-b134-35a945c5d2cb)    ![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/fc29f92d-69bf-4b89-a118-ee5f2923bf5b)
+
+
+
+ *---------------------------------------------------- VERSION DESKTOP -------------------------------------------------------------*
+
+
+ 
+![image](https://github.com/BrianDobler/foresttv-frontend-ba/assets/54556977/77284768-9e9c-46bb-986c-b77b874f3adf)
+
 
 
 
