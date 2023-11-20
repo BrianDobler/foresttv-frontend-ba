@@ -1,5 +1,5 @@
 # foresttv-frontend-ba
-Este es un proyecto que fui desarrollando a en diferentes sprints para el curso de BA Multiplica 2.0 'Frontend Developer'. 
+Este es un proyecto que fui desarrollando en diferentes sprints para el curso de BA Multiplica 2.0 'Frontend Developer'. 
 
 Cada alumno debia decidir que sitio web implementaria, ya sea un ecommerce, tienda, etc. Particularmente, como soy amante del fútbol, y Lionel Andrés esta jugando en su nuevo equipo Inter Miami, me parecio buena idea implementar un sitio similar al de AppleTV donde transmiten los partidos de la MLS(liga de Estados Unidos) en vivo.
 
