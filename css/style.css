@@ -367,11 +367,15 @@ img.navbar_logo {
 		transform: translateX(0);
 	}
 }
+
 .boton-vivo {
 	animation: aparecerBotonesInicio 1s ease-in;
 }
 .texto-superior {
 	animation: aparecerTextoIncio 1s ease-out;
+}
+.navbar {
+	animation: aparcerCards 1s ease-in-out;
 }
 .boton-vivo:hover,
 .boton-mute:hover,
