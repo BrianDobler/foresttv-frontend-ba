@@ -203,6 +203,7 @@ img.navbar_logo {
 .navbar_salir:hover {
 	color: var(--color-principal);
 }
+
 /* MostrarMenu */
 .show-menu {
 	bottom: 0;
@@ -223,10 +224,10 @@ img.navbar_logo {
 	color: var(--color-secundario);
 }
 .scroll-header .navbar_link {
-	color: #333;
+	color: var(--color-secundario-negro);
 }
 .scroll-header .navbar_link:hover {
-	color: #000;
+	color: var(--color-principal);
 	text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.7);
 }
 .scroll-header .navbar_logo {
@@ -255,6 +256,19 @@ img.navbar_logo {
 		max-width: 300px;
 	}
 }
+@keyframes ocultarMenu {
+	from {
+		bottom: -100%;
+	}
+	to {
+		bottom: 0;
+	}
+}
+
+.show-menu {
+	animation: ocultarMenu 0.4s ease forwards;
+}
+
 .inicio_container {
 	position: relative;
 	font-size: 16px;

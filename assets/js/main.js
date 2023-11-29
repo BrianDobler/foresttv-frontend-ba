@@ -1,40 +1,47 @@
 //---------------------------------------------------------------------
 // Cargar en el DOM la funcion MostrarMenuMobile
-document.addEventListener('DOMContentLoaded', function mostrarMenuMobile() {
-	const navMenu = document.getElementById('navbar-menu');
-	const navOpcion = document.getElementById('navbar-opc');
-	const navSalir = document.getElementById('navbar-salir');
-	const navLogo = document.querySelector('.navbar_logo');
 
-	// Mostrar Menú
-	if (navOpcion) {
-		navOpcion.addEventListener('click', () => {
-			navMenu.classList.add('show-menu');
-			navLogo.style.display = 'block';
-			navOpcion.style.display = 'none';
-			navSalir.style.display = 'block';
-		});
-	}
+const navMenu = document.getElementById('navbar-menu');
+const navOpcion = document.getElementById('navbar-opc');
+const navSalir = document.getElementById('navbar-salir');
+const navLogo = document.querySelector('.navbar_logo');
+const navLink = document.querySelectorAll('.navbar_link');
 
-	// Ocultar Menú
+// Mostrar Menú
+if (navOpcion) {
+	navOpcion.addEventListener('click', () => {
+		console.log('Entro aca');
+		navLogo.style.display = 'block';
+		navOpcion.style.display = 'none';
+		navSalir.style.display = 'block';
+		navMenu.classList.add('show-menu');
+
+		// Asegúrate de que los iconos estén ocultos cuando se muestra el menú
+		botonMute.style.display = 'none';
+		botonDesmute.style.display = 'none';
+	});
+
+	// Asegúrate de que navbar-salir esté oculto inicialmente
 	if (navSalir) {
-		navSalir.addEventListener('click', () => {
-			navMenu.classList.remove('show-menu');
-			navLogo.style.display = 'block';
-			navSalir.style.display = 'none';
-			navOpcion.style.display = 'block';
-		});
+		navSalir.style.display = 'none';
 	}
+}
 
-	//==================== Eliminar Menu Mobile ====================//
-	const navLink = document.querySelectorAll('.navbar_link');
-
-	function linkAction() {
-		const navMenu = document.getElementById('navbar-menu');
+// Ocultar Menú
+if (navSalir) {
+	navSalir.addEventListener('click', () => {
+		console.log('Entro alla');
 		navMenu.classList.remove('show-menu');
-	}
-	navLink.forEach((n) => n.addEventListener('click', linkAction));
-});
+		navLogo.style.display = 'block';
+		navSalir.style.display = 'none';
+		navOpcion.style.display = 'block';
+
+		// Restaura la visibilidad de los iconos cuando se oculta el menú
+		actualizarBotones();
+	});
+}
+
+//==================== Eliminar Menu Mobile ====================//
 
 //=====Variables que se utilizan en las dos funciones siguientes=====//
 
@@ -91,11 +98,11 @@ function actualizarNavbar() {
 	const urlParams = new URLSearchParams(window.location.search);
 	const registroParam = urlParams.get('registro');
 	const autenticadoParam = urlParams.get('autenticado');
-
+	const userNavbar = document.getElementById('user-navbar');
 	// Actualizar el título del navbar si el parámetro está presente
 	if (registroParam === 'true' && autenticadoParam === 'true') {
-		document.getElementById('user-navbar').innerText = 'Brian Dobler';
-		document.getElementById('user-navbar').style.display = 'block';
+		userNavbar.innerHTML = '<i class="fas fa-user"></i> Brian Dobler';
+		document.getElementById('user-navbar').style.display = 'flex';
 	}
 }
 
@@ -132,23 +139,11 @@ const flechaDerecha = document.getElementById('flecha-der');
 //  Evento Listener para la flecha derecha. ----- -----
 flechaDerecha.addEventListener('click', () => {
 	fila.scrollLeft += fila.offsetWidth;
-
-	const indicadorActivo = document.querySelector('.activo');
-	if (indicadorActivo.nextSibling) {
-		indicadorActivo.nextSibling.classList.add('activo');
-		indicadorActivo.classList.remove('activo');
-	}
 });
 
 // Evento Listener para la flecha izquierda. ----- -----
 flechaIzquierda.addEventListener('click', () => {
 	fila.scrollLeft -= fila.offsetWidth;
-
-	const indicadorActivo = document.querySelector('.activo');
-	if (indicadorActivo.previousSibling) {
-		indicadorActivo.previousSibling.classList.add('activo');
-		indicadorActivo.classList.remove('activo');
-	}
 });
 
 // Hover ----- -----

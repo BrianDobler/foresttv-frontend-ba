@@ -1,7 +1,5 @@
 body {
-	background: #093028;
-	background: -webkit-linear-gradient(to top, #237a57, #093028);
-	background: linear-gradient(to top, #237a57, #093028);
+	background: #151717;
 	margin: 0;
 	height: 100vh;
 	display: flex;
