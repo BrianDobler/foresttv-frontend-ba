@@ -100,9 +100,13 @@ function actualizarNavbar() {
 	const autenticadoParam = urlParams.get('autenticado');
 	const userNavbar = document.getElementById('user-navbar');
 	// Actualizar el título del navbar si el parámetro está presente
-	if (registroParam === 'true' && autenticadoParam === 'true') {
+	if (window.innerWidth <= 768 && registroParam === 'true' && autenticadoParam === 'true') {
+		// Mostrar el ícono y el nombre en dispositivos móviles
 		userNavbar.innerHTML = '<i class="fas fa-user"></i> Brian Dobler';
-		document.getElementById('user-navbar').style.display = 'flex';
+		userNavbar.style.display = 'flex';
+	} else {
+		userNavbar.innerHTML = '<i class="fas fa-user"></i> Brian Dobler';
+		userNavbar.style.display = 'block';
 	}
 }
 
@@ -130,69 +134,46 @@ function agruparLlamadasFunciones() {
 actualizarNavbar();
 agruparLlamadasFunciones();
 
-const fila = document.querySelector('.container_carousel');
-const partidos = document.querySelectorAll('.card_partido_liga');
+document.addEventListener('DOMContentLoaded', () => {
+	const carruseles = document.querySelectorAll('.container_carousel');
 
-const flechaIzquierda = document.getElementById('flecha-izq');
-const flechaDerecha = document.getElementById('flecha-der');
+	carruseles.forEach((carrusel) => {
+		const flechaIzquierda = carrusel.parentElement.querySelector('.flecha_izq');
+		const flechaDerecha = carrusel.parentElement.querySelector('.flecha_der');
+		const partidos = carrusel.querySelectorAll('.card_partido_liga');
 
-//  Evento Listener para la flecha derecha. ----- -----
-flechaDerecha.addEventListener('click', () => {
-	fila.scrollLeft += fila.offsetWidth;
-});
+		flechaDerecha.addEventListener('click', () => {
+			carrusel.scrollLeft += carrusel.offsetWidth;
+		});
 
-// Evento Listener para la flecha izquierda. ----- -----
-flechaIzquierda.addEventListener('click', () => {
-	fila.scrollLeft -= fila.offsetWidth;
-});
+		flechaIzquierda.addEventListener('click', () => {
+			carrusel.scrollLeft -= carrusel.offsetWidth;
+		});
 
-// Hover ----- -----
-partidos.forEach((card_partido_liga) => {
-	card_partido_liga.addEventListener('mouseenter', (e) => {
-		const elemento = e.currentTarget;
-		setTimeout(() => {
-			partidos.forEach((card_partido_liga) => card_partido_liga.classList.remove('hover'));
-			elemento.classList.add('hover');
-		}, 10);
+		partidos.forEach((card_partido_liga) => {
+			card_partido_liga.addEventListener('mouseenter', () => {
+				partidos.forEach((card_partido) => card_partido.classList.remove('hover'));
+				card_partido_liga.classList.add('hover');
+			});
+		});
+
+		carrusel.addEventListener('mouseleave', () => {
+			partidos.forEach((card_partido) => card_partido.classList.remove('hover'));
+		});
 	});
-});
-
-fila.addEventListener('mouseleave', () => {
-	partidos.forEach((card_partido_liga) => card_partido_liga.classList.remove('hover'));
 });
 
 //Funcion para cambiar el texto de inicio cuando sea mobile
 function cambiarTextoIncio() {
 	if (window.innerWidth <= 767) {
+		console.log('La función cambiarTextoIncio se está ejecutando.');
 		document.querySelector('.inicio_container .descripcion').textContent =
 			'Toda la programación en vivo de los partidos de todo el mundo.';
 		document.querySelector('.inicio_container .descripcion').classList.add('mobile');
 	}
 }
 cambiarTextoIncio();
-// =========== Deslizar carousel con el dedo en dispositivos mobile
-const filas = document.querySelector('.container_carousel');
-let isDragging = false;
-let startX;
 
-filas.addEventListener('touchstart', (e) => {
-	isDragging = true;
-	startX = e.touches[0].clientX;
-});
-
-filas.addEventListener('touchmove', (e) => {
-	if (!isDragging) return;
-
-	const currentX = e.touches[0].clientX;
-	const diffX = startX - currentX;
-
-	filas.scrollLeft += diffX;
-	startX = currentX;
-});
-
-filas.addEventListener('touchend', () => {
-	isDragging = false;
-});
 //=======================================================
 // Agregar un evento de desplazamiento para controlar el video
 window.addEventListener('scroll', verificarScroll);

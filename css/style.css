@@ -224,10 +224,10 @@ img.navbar_logo {
 	color: var(--color-secundario);
 }
 .scroll-header .navbar_link {
-	color: var(--color-secundario-negro);
+	color: #333;
 }
 .scroll-header .navbar_link:hover {
-	color: var(--color-principal);
+	color: #000;
 	text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.7);
 }
 .scroll-header .navbar_logo {
@@ -779,6 +779,19 @@ img.navbar_logo {
 	}
 
 	@media screen and (min-width: 768px) {
+		@keyframes aparecerMenuNavbar {
+			from {
+				opacity: 0;
+				transform: translateY(0);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		.navbar_menu {
+			animation: aparecerMenuNavbar 2s ease-in;
+		}
 		.container {
 			margin-left: auto;
 			margin-right: auto;
