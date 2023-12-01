@@ -204,6 +204,9 @@ img.navbar_logo {
 	color: var(--color-principal);
 }
 
+.user_u {
+	color: var(--color-principal);
+}
 /* MostrarMenu */
 .show-menu {
 	bottom: 0;
@@ -214,6 +217,9 @@ img.navbar_logo {
 	box-shadow: 0 -1px 4px rgba(130, 255, 53, 0.15);
 }
 
+.icono_user {
+	display: flex;
+}
 .scroll-header {
 	background-color: var(--color-principal);
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -224,10 +230,10 @@ img.navbar_logo {
 	color: var(--color-secundario);
 }
 .scroll-header .navbar_link {
-	color: #333;
+	color: var(--color-secundario-negro);
 }
 .scroll-header .navbar_link:hover {
-	color: #000;
+	color: var(--color-principal);
 	text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.7);
 }
 .scroll-header .navbar_logo {
@@ -741,6 +747,91 @@ img.navbar_logo {
 	color: var(--color-principal);
 	text-decoration: none;
 }
+.heart-container {
+	--heart-color: var(--color-principal);
+	position: relative;
+	width: 30px;
+	height: 30px;
+	transition: 0.3s;
+}
+
+.heart-container .checkbox {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 20;
+	cursor: pointer;
+}
+
+.heart-container .svg-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.heart-container .svg-outline,
+.heart-container .svg-filled {
+	fill: var(--heart-color);
+	position: absolute;
+}
+
+.heart-container .svg-filled {
+	animation: keyframes-svg-filled 1s;
+	display: none;
+}
+
+.heart-container .svg-celebrate {
+	position: absolute;
+	animation: keyframes-svg-celebrate 0.5s;
+	animation-fill-mode: forwards;
+	display: none;
+	stroke: var(--heart-color);
+	fill: var(--heart-color);
+	stroke-width: 2px;
+}
+
+.heart-container .checkbox:checked ~ .svg-container .svg-filled {
+	display: block;
+}
+
+.heart-container .checkbox:checked ~ .svg-container .svg-celebrate {
+	display: block;
+}
+
+@keyframes keyframes-svg-filled {
+	0% {
+		transform: scale(0);
+	}
+
+	25% {
+		transform: scale(1.2);
+	}
+
+	50% {
+		transform: scale(1);
+		filter: brightness(1.5);
+	}
+}
+
+@keyframes keyframes-svg-celebrate {
+	0% {
+		transform: scale(0);
+	}
+
+	50% {
+		opacity: 1;
+		filter: brightness(1.5);
+	}
+
+	100% {
+		transform: scale(1.4);
+		opacity: 0;
+		display: none;
+	}
+}
 /* =================================================================*/
 /*=============== Media Query dispositivos pequeños ===============*/
 @media screen and (max-width: 350px) {
@@ -790,7 +881,7 @@ img.navbar_logo {
 			}
 		}
 		.navbar_menu {
-			animation: aparecerMenuNavbar 2s ease-in;
+			animation: aparecerMenuNavbar 1.2s ease-in;
 		}
 		.container {
 			margin-left: auto;
@@ -825,7 +916,16 @@ img.navbar_logo {
 		.navbar_opc {
 			display: none;
 		}
-
+		#user-navbar {
+			display: block;
+		}
+		.scroll-header .navbar_link {
+			color: #333;
+		}
+		.scroll-header .navbar_link:hover {
+			color: #000;
+			text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.7);
+		}
 		.inicio_container {
 			max-width: 1920px;
 			transition: 3s ease all;

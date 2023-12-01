@@ -100,13 +100,11 @@ function actualizarNavbar() {
 	const autenticadoParam = urlParams.get('autenticado');
 	const userNavbar = document.getElementById('user-navbar');
 	// Actualizar el título del navbar si el parámetro está presente
-	if (window.innerWidth <= 768 && registroParam === 'true' && autenticadoParam === 'true') {
+	if (registroParam === 'true' && autenticadoParam === 'true') {
 		// Mostrar el ícono y el nombre en dispositivos móviles
 		userNavbar.innerHTML = '<i class="fas fa-user"></i> Brian Dobler';
-		userNavbar.style.display = 'flex';
 	} else {
-		userNavbar.innerHTML = '<i class="fas fa-user"></i> Brian Dobler';
-		userNavbar.style.display = 'block';
+		userNavbar.style.display = 'flex';
 	}
 }
 
